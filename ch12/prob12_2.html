@@ -756,7 +756,7 @@ $y,x_1$の偏相関係数$r_{01\cdot(2)}$は、$-s^{01}/\sqrt{s^{00}s^{11}}$で�
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="&#32080;&#26524;&#12398;&#32771;&#23519;&#12290;">&#32080;&#26524;&#12398;&#32771;&#23519;&#12290;<a class="anchor-link" href="#&#32080;&#26524;&#12398;&#32771;&#23519;&#12290;">&#182;</a></h4>
+<h4 id="&#32080;&#26524;&#12398;&#32771;&#23519;">&#32080;&#26524;&#12398;&#32771;&#23519;<a class="anchor-link" href="#&#32080;&#26524;&#12398;&#32771;&#23519;">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -765,17 +765,8 @@ $y,x_1$の偏相関係数$r_{01\cdot(2)}$は、$-s^{01}/\sqrt{s^{00}s^{11}}$で�
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$0< r_{01\cdot(2)}<r_{01}$となることから、身長と体重の間には正の相関があるが、胸囲の大きさの影響を取り除くとその関係は弱まる。
+<p>$0$ &lt; $r_{01(2)}$ &lt; $r_{01}$となることから、身長と体重の間には正の相関があるが、胸囲の大きさの影響を取り除くとその関係は弱まる。
 すなわち、胸囲（横幅？）を一定とすれば、身長の高さが体重に与える影響はより限定的になる。</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 
 </div>
 </div>
@@ -1071,10 +1062,37 @@ $\hat{y} = \hat{{\theta_{0}}}+{\hat{\theta_{2}}}x_{2}, \hspace{15pt} e_0=y - {\h
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$Corr(e_0,e_1) = \frac{Cov(e_0,e_1)}{\sqrt{Var(e_0)}\sqrt{Var(e_1)}}
-= \frac{(1/n)y<em>c'[I-x</em>{2c}(x<em>{2c}'x</em>{2c})^{-1}x<em>{2c}']x</em>{1c}}{\sqrt{(1/n)y<em>c'[I-x</em>{2c}(x<em>{2c}'x</em>{2c})^{-1}x_{2c}']y}
-\sqrt{(1/n)y<em>c'[I-x</em>{2c}(x<em>{2c}'x</em>{2c})^{-1}x<em>{2c}']x</em>{1c}}}
-\hspace{15pt} ([I-x<em>{2c}(x</em>{2c}'x<em>{2c})^{-1}x</em>{2c}']はべき等)$</p>
+<p>$Corr(e_0,e_1) = \frac{Cov(e_0,e_1)}{\sqrt{Var(e_0)}\sqrt{Var(e_1)}}$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>ここで、$Cov(e_0,e_1) = (1/n)y_c'[I-x_{2c}(x_{2c}'x_{2c})^{-1}x_{2c}']x_{1c}$、　$([I-x_{2c}(x_{2c}'x_{2c})^{-1}x_{2c}'])$はべき等</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$\sqrt{Var(e_0)} = \sqrt{(1/n)y_c'[I-x_{2c}(x_{2c}'x_{2c})^{-1}x_{2c}']y}$、</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$\sqrt{Var(e_1)} =　\sqrt{(1/n)y_c'[I-x_{2c}(x_{2c}'x_{2c})^{-1}x_{2c}']x_{1c}}$ だから、</p>
 
 </div>
 </div>
@@ -1094,9 +1112,9 @@ $\hat{y} = \hat{{\theta_{0}}}+{\hat{\theta_{2}}}x_{2}, \hspace{15pt} e_0=y - {\h
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$=\frac{s_{01}-s_{02}s_{12x}s_{22}^{-1}}{\sqrt{s_{00}-s_{02}s_{22}^{-1}}\sqrt{s_{11}-s_{12}s_{22}^{-1}}}$
-$\hspace{15pt}$ 
-(コントロール変数が1つなので、それとの共分散の部分もスカラーとなる)</p>
+<p>$Corr(e_0,e_1)=\frac{s_{01}-s_{02}s_{12x}s_{22}^{-1}}{\sqrt{s_{00}-s_{02}s_{22}^{-1}}\sqrt{s_{11}-s_{12}s_{22}^{-1}}}$
+$\hspace{15pt}$ となる。
+(コントロール変数が1つなので、それとの共分散の部分はスカラー)</p>
 
 </div>
 </div>
@@ -1106,7 +1124,7 @@ $\hspace{15pt}$
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>単相関係数を用いて表すと、</p>
+<p>単相関係数$r_{ij}=s_{ij}/\sqrt{s_{ii}}\sqrt{s_{jj}}$を用いた表示では、</p>
 
 </div>
 </div>
@@ -1116,7 +1134,7 @@ $\hspace{15pt}$
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$=\frac{r_{01}-r_{02}r_{12}}{\sqrt{1-r_{02}^{2}}\sqrt{1-r_{12}^{2}}}$.</p>
+<p>$Corr(e_0,e_1)=\frac{r_{01}-r_{02}r_{12}}{\sqrt{1-r_{02}^{2}}\sqrt{1-r_{12}^{2}}}$　となる。</p>
 
 </div>
 </div>
