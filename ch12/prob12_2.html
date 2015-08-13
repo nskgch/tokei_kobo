@@ -263,9 +263,9 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#27425;&#12398;3&#12388;&#12398;&#12450;&#12503;&#12525;&#12540;&#12481;&#12434;&#29992;&#12356;&#12390;&#12289;&#32232;&#30456;&#38306;&#20418;&#25968;&#12434;&#12381;&#12428;&#12382;&#12428;&#31639;&#20986;&#12290;">&#27425;&#12398;3&#12388;&#12398;&#12450;&#12503;&#12525;&#12540;&#12481;&#12434;&#29992;&#12356;&#12390;&#12289;&#32232;&#30456;&#38306;&#20418;&#25968;&#12434;&#12381;&#12428;&#12382;&#12428;&#31639;&#20986;&#12290;<a class="anchor-link" href="#&#27425;&#12398;3&#12388;&#12398;&#12450;&#12503;&#12525;&#12540;&#12481;&#12434;&#29992;&#12356;&#12390;&#12289;&#32232;&#30456;&#38306;&#20418;&#25968;&#12434;&#12381;&#12428;&#12382;&#12428;&#31639;&#20986;&#12290;">&#182;</a></h3><ol>
+<h3 id="&#27425;&#12398;3&#12388;&#12398;&#12450;&#12503;&#12525;&#12540;&#12481;&#12434;&#29992;&#12356;&#12390;&#12289;&#20559;&#30456;&#38306;&#20418;&#25968;&#12434;&#12381;&#12428;&#12382;&#12428;&#31639;&#20986;&#12290;">&#27425;&#12398;3&#12388;&#12398;&#12450;&#12503;&#12525;&#12540;&#12481;&#12434;&#29992;&#12356;&#12390;&#12289;&#20559;&#30456;&#38306;&#20418;&#25968;&#12434;&#12381;&#12428;&#12382;&#12428;&#31639;&#20986;&#12290;<a class="anchor-link" href="#&#27425;&#12398;3&#12388;&#12398;&#12450;&#12503;&#12525;&#12540;&#12481;&#12434;&#29992;&#12356;&#12390;&#12289;&#20559;&#30456;&#38306;&#20418;&#25968;&#12434;&#12381;&#12428;&#12382;&#12428;&#31639;&#20986;&#12290;">&#182;</a></h3><ol>
 <li>共分散行列の逆行列の要素を用いて計算（教科書での計算方法）</li>
-<li>観測値$y$と説明変数$x_1$から、他の説明変数の影響を取り除いたそれぞれの残差の相関係数を計算（教科書での編相関係数の定義）</li>
+<li>観測値$y$と説明変数$x_1$から、他の説明変数の影響を取り除いたそれぞれの残差の相関係数を計算（教科書での偏相関係数の定義）</li>
 <li>(単)相関係数を用いて計算（略解に出ている式、他の多くの統計学の本で公式として用いられている）  </li>
 </ol>
 
@@ -294,7 +294,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[129]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">math</span>
@@ -313,7 +313,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[130]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">X</span> <span class="c">#デザイン行列</span>
@@ -327,7 +327,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[130]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -365,13 +365,13 @@ $y_c= (I-(1/n)jj')y,X_c = (I-(1/n)jj')X$を計算。<br>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[131]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="c">#10</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="c">#観測数 10</span>
 
-<span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
-<span class="n">J</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">)))</span> <span class="c"># J = jj&#39;</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="c">#10×10単位行列 </span>
+<span class="n">J</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">)))</span> <span class="c"># J = jj&#39;　要素がすべて1の正方行列（10×10）</span>
 
 <span class="n">y_c</span> <span class="o">=</span> <span class="p">(</span><span class="n">I</span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">J</span><span class="p">)</span><span class="o">*</span><span class="n">y</span> <span class="c">#中心化したy</span>
 <span class="n">X_c</span> <span class="o">=</span> <span class="p">(</span><span class="n">I</span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">J</span><span class="p">)</span><span class="o">*</span><span class="n">X</span> <span class="c">#中心化したX</span>
@@ -384,7 +384,7 @@ $y_c= (I-(1/n)jj')y,X_c = (I-(1/n)jj')X$を計算。<br>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[132]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">y_c</span>
@@ -398,7 +398,7 @@ $y_c= (I-(1/n)jj')y,X_c = (I-(1/n)jj')X$を計算。<br>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[132]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -422,7 +422,7 @@ $y_c= (I-(1/n)jj')y,X_c = (I-(1/n)jj')X$を計算。<br>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[133]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">X_c</span>
@@ -436,7 +436,7 @@ $y_c= (I-(1/n)jj')y,X_c = (I-(1/n)jj')X$を計算。<br>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[133]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -470,7 +470,7 @@ $y_c= (I-(1/n)jj')y,X_c = (I-(1/n)jj')X$を計算。<br>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[134]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">S_xx</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="n">X_c</span><span class="o">.</span><span class="n">T</span> <span class="o">*</span><span class="n">X_c</span>
@@ -485,7 +485,7 @@ $y_c= (I-(1/n)jj')y,X_c = (I-(1/n)jj')X$を計算。<br>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[134]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -511,7 +511,7 @@ $y_c= (I-(1/n)jj')y,X_c = (I-(1/n)jj')X$を計算。<br>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[135]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">S_xy</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="n">X_c</span><span class="o">.</span><span class="n">T</span> <span class="o">*</span> <span class="n">y_c</span>
@@ -526,7 +526,7 @@ $y_c= (I-(1/n)jj')y,X_c = (I-(1/n)jj')X$を計算。<br>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[135]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -552,7 +552,7 @@ $y_c= (I-(1/n)jj')y,X_c = (I-(1/n)jj')X$を計算。<br>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[136]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">s_00</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="n">y_c</span><span class="o">.</span><span class="n">T</span> <span class="o">*</span> <span class="n">y_c</span>
@@ -575,7 +575,7 @@ $y_c= (I-(1/n)jj')y,X_c = (I-(1/n)jj')X$を計算。<br>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[137]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">bmat</span><span class="p">([[</span><span class="n">s_00</span><span class="p">,</span><span class="n">S_xy</span><span class="o">.</span><span class="n">T</span><span class="p">],[</span><span class="n">S_xy</span><span class="p">,</span><span class="n">S_xx</span><span class="p">]])</span>
@@ -598,7 +598,7 @@ $y_c= (I-(1/n)jj')y,X_c = (I-(1/n)jj')X$を計算。<br>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[138]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">S_inv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
@@ -613,7 +613,7 @@ $y_c= (I-(1/n)jj')y,X_c = (I-(1/n)jj')X$を計算。<br>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[138]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[13]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -650,7 +650,7 @@ $y,x_1$の偏相関係数$r_{01\cdot(2)}$は、$-s^{01}/\sqrt{s^{00}s^{11}}$で�
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[139]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">s_inv_00</span> <span class="o">=</span> <span class="n">S_inv</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
@@ -677,7 +677,7 @@ $y,x_1$の偏相関係数$r_{01\cdot(2)}$は、$-s^{01}/\sqrt{s^{00}s^{11}}$で�
 </div>
 </div>
 
-<div class="output_area"><div class="prompt output_prompt">Out[139]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[14]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -711,7 +711,7 @@ $y,x_1$の偏相関係数$r_{01\cdot(2)}$は、$-s^{01}/\sqrt{s^{00}s^{11}}$で�
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[140]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">s_00</span> <span class="o">=</span> <span class="n">S</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
@@ -738,7 +738,7 @@ $y,x_1$の偏相関係数$r_{01\cdot(2)}$は、$-s^{01}/\sqrt{s^{00}s^{11}}$で�
 </div>
 </div>
 
-<div class="output_area"><div class="prompt output_prompt">Out[140]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[15]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -766,7 +766,7 @@ $y,x_1$の偏相関係数$r_{01\cdot(2)}$は、$-s^{01}/\sqrt{s^{00}s^{11}}$で�
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>$0$ &lt; $r_{01(2)}$ &lt; $r_{01}$となることから、身長と体重の間には正の相関があるが、胸囲の大きさの影響を取り除くとその関係は弱まる。
-すなわち、胸囲（横幅？）を一定とすれば、身長の高さが体重に与える影響はより限定的になる。</p>
+すなわち、胸囲（横幅？）を一定とすれば、身長の高さ（縦？）が体重に与える影響はより限定的になる。</p>
 
 </div>
 </div>
@@ -786,7 +786,7 @@ $y,x_1$の偏相関係数$r_{01\cdot(2)}$は、$-s^{01}/\sqrt{s^{00}s^{11}}$で�
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$y$を$x_2$に回帰したものを$\hat{\hat{y}}$とし、その残差を$e_0$とする。$x_1$を$x_2$に回帰したものを$\hat{\hat{x_1}}$とし、その残差を$e_1$とする（教科書 p.213）。これらの単相関係数$Corr(e_0,e_1)$が教科書での偏相関係数の定義。</p>
+<p>$y$を$x_2$に回帰したものを$\hat{\hat{y}}$とし、その残差を$e_0$とする。$x_1$を$x_2$に回帰したものを$\hat{\hat{x_1}}$とし、その残差を$e_1$とする（教科書 p.213）。これらの単相関係数$Corr(e_0,e_1)$が、教科書でのそもそもの偏相関係数の定義。</p>
 
 </div>
 </div>
@@ -807,14 +807,14 @@ $\hat{\hat{x_{1c}}} = \hat{\hat{\alpha_c}}x_{2c}, \hspace{15pt} e_1=x_{1c} - \ha
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$e_0$を求める。$\ e_0 = [I-x_2(x_2'x_2)^{-1}x_2']y\ $より</p>
+<p>$e_0$を求める。$\ e_0 = [I-x_2(x_2'x_2)^{-1}x_2']y_c\ $</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[141]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">x_2c</span> <span class="o">=</span> <span class="p">(</span><span class="n">I</span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">J</span><span class="p">)</span><span class="o">*</span><span class="n">x_2</span> <span class="c">#中心化</span>
@@ -840,7 +840,7 @@ $\hat{\hat{x_{1c}}} = \hat{\hat{\alpha_c}}x_{2c}, \hspace{15pt} e_1=x_{1c} - \ha
 </div>
 </div>
 
-<div class="output_area"><div class="prompt output_prompt">Out[141]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[16]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -874,7 +874,7 @@ $\hat{\hat{x_{1c}}} = \hat{\hat{\alpha_c}}x_{2c}, \hspace{15pt} e_1=x_{1c} - \ha
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[142]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">x_1c</span> <span class="o">=</span> <span class="p">(</span><span class="n">I</span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">J</span><span class="p">)</span><span class="o">*</span><span class="n">x_1</span> <span class="c">#中心化</span>
@@ -892,7 +892,7 @@ $\hat{\hat{x_{1c}}} = \hat{\hat{\alpha_c}}x_{2c}, \hspace{15pt} e_1=x_{1c} - \ha
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[142]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[17]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -926,7 +926,7 @@ $\hat{\hat{x_{1c}}} = \hat{\hat{\alpha_c}}x_{2c}, \hspace{15pt} e_1=x_{1c} - \ha
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[143]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">e_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">e_0</span><span class="p">)</span><span class="o">.</span><span class="n">T</span> <span class="c">#arrayに型を変換</span>
@@ -943,7 +943,7 @@ $\hat{\hat{x_{1c}}} = \hat{\hat{\alpha_c}}x_{2c}, \hspace{15pt} e_1=x_{1c} - \ha
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[143]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[18]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -999,7 +999,7 @@ $\hat{y} = \hat{{\theta_{0}}}+{\hat{\theta_{2}}}x_{2}, \hspace{15pt} e_0=y - {\h
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[144]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="c">#統計ライブラリを使用</span>
@@ -1072,7 +1072,7 @@ $\hat{y} = \hat{{\theta_{0}}}+{\hat{\theta_{2}}}x_{2}, \hspace{15pt} e_0=y - {\h
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>ここで、$Cov(e_0,e_1) = (1/n)y_c'[I-x_{2c}(x_{2c}'x_{2c})^{-1}x_{2c}']x_{1c}$、　$([I-x_{2c}(x_{2c}'x_{2c})^{-1}x_{2c}'])$はべき等</p>
+<p>ここで、$Cov(e_0,e_1) = (1/n)y_c'[I-x_{2c}(x_{2c}'x_{2c})^{-1}x_{2c}']x_{1c}$、　$([I-x_{2c}(x_{2c}'x_{2c})^{-1}x_{2c}']$は対称、べき等)</p>
 
 </div>
 </div>
@@ -1082,7 +1082,7 @@ $\hat{y} = \hat{{\theta_{0}}}+{\hat{\theta_{2}}}x_{2}, \hspace{15pt} e_0=y - {\h
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$\sqrt{Var(e_0)} = \sqrt{(1/n)y_c'[I-x_{2c}(x_{2c}'x_{2c})^{-1}x_{2c}']y}$、</p>
+<p>$\sqrt{Var(e_0)} = \sqrt{(1/n)y_c'[I-x_{2c}(x_{2c}'x_{2c})^{-1}x_{2c}']y_c}$、</p>
 
 </div>
 </div>
@@ -1092,7 +1092,7 @@ $\hat{y} = \hat{{\theta_{0}}}+{\hat{\theta_{2}}}x_{2}, \hspace{15pt} e_0=y - {\h
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$\sqrt{Var(e_1)} =　\sqrt{(1/n)y_c'[I-x_{2c}(x_{2c}'x_{2c})^{-1}x_{2c}']x_{1c}}$ だから、</p>
+<p>$\sqrt{Var(e_1)} =　\sqrt{(1/n)x_{1c}'[I-x_{2c}(x_{2c}'x_{2c})^{-1}x_{2c}']x_{1c}}$ だから、</p>
 
 </div>
 </div>
@@ -1112,7 +1112,7 @@ $\hat{y} = \hat{{\theta_{0}}}+{\hat{\theta_{2}}}x_{2}, \hspace{15pt} e_0=y - {\h
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$Corr(e_0,e_1)=\frac{s_{01}-s_{02}s_{12x}s_{22}^{-1}}{\sqrt{s_{00}-s_{02}s_{22}^{-1}}\sqrt{s_{11}-s_{12}s_{22}^{-1}}}$
+<p>$Corr(e_0,e_1)=\frac{s_{01}-s_{02}s_{12x}s_{22}^{-1}}{\sqrt{s_{00}-s_{02}^2s_{22}^{-1}}\sqrt{s_{11}-s_{12}^2s_{22}^{-1}}}$
 $\hspace{15pt}$ となる。
 (コントロール変数が1つなので、それとの共分散の部分はスカラー)</p>
 
@@ -1145,14 +1145,14 @@ $\hspace{15pt}$ となる。
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>全変数についての相関係数の行列を求める。<br>
-$A = [y,x_1,x_2]$とし、Aを各列について標準化したものを改めてZとおく。</p>
+$A = [y,x_1,x_2]$とし、$A$を各列について標準化したものを改めて$Z$とおく。</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[167]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">y</span><span class="p">,</span><span class="n">x_1</span><span class="p">,</span><span class="n">x_2</span><span class="p">))</span>
@@ -1168,7 +1168,7 @@ $A = [y,x_1,x_2]$とし、Aを各列について標準化したものを改め�
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[167]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[20]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1202,7 +1202,7 @@ $A = [y,x_1,x_2]$とし、Aを各列について標準化したものを改め�
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[157]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">ZZ</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">Z</span><span class="o">.</span><span class="n">T</span> <span class="o">*</span> <span class="n">Z</span>
@@ -1217,7 +1217,7 @@ $A = [y,x_1,x_2]$とし、Aを各列について標準化したものを改め�
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[157]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[21]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1244,7 +1244,7 @@ $A = [y,x_1,x_2]$とし、Aを各列について標準化したものを改め�
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[185]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="p">(</span><span class="n">ZZ</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">ZZ</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">ZZ</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="nb">pow</span><span class="p">(</span><span class="n">ZZ</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="nb">pow</span><span class="p">(</span><span class="n">ZZ</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="mi">2</span><span class="p">)))</span>
@@ -1258,7 +1258,7 @@ $A = [y,x_1,x_2]$とし、Aを各列について標準化したものを改め�
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[185]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[22]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
